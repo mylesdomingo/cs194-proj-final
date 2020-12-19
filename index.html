@@ -1,0 +1,159 @@
+<head>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  
+  <body>
+    <section>
+      <h1>Final Project 1 -- Light Field Camera </h1>
+      <p>By Myles Domingo</p>
+
+      <h2>Overview</h2>
+      <p>
+        In this project, we use a defined dataset of images and perform simple operations like shifting and averaging to reproduce complex camera effects.
+      </p>
+  
+      <h2>Depth Refocusing</h2>
+      <p>
+        Shifting images in our dataset by a specific amount and averaging them allows us to recreate an image at different focus depths. Using the coordinates of our grid (17x17), we center our images around the center image and shift it by their respective assigned coordinates in grid space. This shift, denoted by alpha, is scaled to achieve different depths. Here, we shift our image sets using an alpha range between (-3, 3) in 30 timesteps.
+      </p>
+
+      
+      <div class="image-row">
+        <div class="image">
+          <img class="single" src="./outputs/gifs/chess.gif">
+        </div>
+        <div class="image">
+            <img class="single" src="./outputs/gifs/flower.gif">
+          </div>
+          <div class="image">
+            <img class="single" src="./outputs/gifs/truck.gif">
+          </div>
+      </div>
+
+      <p>
+       Here are selected individual frames, where the focus is on <b>front, mid, and back sections</b> of the image, respectively.
+      </p>
+
+      <div class="image-row">
+        <div class="image">
+          <img src="./outputs/chess/chess_0.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/chess/chess_10.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/chess/chess_18.png">
+        </div>
+      </div>
+
+      <div class="image-row">
+        <div class="image">
+          <img src="./outputs/truck/refocus_0.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/truck/refocus_10.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/truck/refocus_20.png">
+        </div>
+      </div>
+
+      <div class="image-row">
+        <div class="image">
+          <img src="./outputs/flower/flower_0.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/flower/flower_10.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/flower/flower_20.png">
+        </div>
+      </div>
+
+      <h2>Aperture Adjustment</h2>
+      <p>
+        We can vary the amount of photos in our averaging operation to adjust aperture affects. We note a heuristic r, which tracks how many images from our center image in our (17x17) grid to take. For example, r=0 takes on the center image. For r=70, we average 141 images. To adjust aperture, we vary r while focusing on a specific point on our image. The gifs show a 30 timestep aperture adjustment for r between (0, 144).
+      </p>
+
+      <div class="image-row">
+        <div class="image">
+          <img class="single" src="./outputs/gifs/chess_ap.gif">
+        </div>
+        <div class="image">
+            <img class="single" src="./outputs/gifs/flower_ap.gif">
+          </div>
+          <div class="image">
+            <img class="single" src="./outputs/gifs/truck_ap.gif">
+          </div>
+      </div>
+
+      
+      <p>
+        Here are selected individual frames, with <b>r=0, r=75, and r=100,</b>respectively.
+      </p>
+
+      <div class="image-row">
+        <div class="image">
+          <img src="./outputs/chess_ap/chess_ap_0.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/chess_ap/chess_ap_75.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/chess_ap/chess_ap_100.png">
+        </div>
+      </div>
+
+      <div class="image-row">
+        <div class="image">
+          <img src="./outputs/truck_ap/truck_ap_0.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/truck_ap/truck_ap_75.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/truck_ap/truck_ap_100.png">
+        </div>
+      </div>
+
+      <div class="image-row">
+        <div class="image">
+          <img src="./outputs/flower_ap/flower_ap_0.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/flower_ap/flower_ap_75.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/flower_ap/flower_ap_100.png">
+        </div>
+      </div>
+     
+      <br>
+      <hr>
+      <br>
+      <h1>Final Project 2 -- Image Quilting</h1>
+      <p>
+        In this project, we sample different images and use a variety of methods to create seamless randomized textures.
+      </p>
+      
+      <h2>Randomly Sampled Texture</h2>
+      <p>We create a quilt_random function that allows us to tile random patches of our samples onto a canvas image. This, while simple, does not yield effective results.</p>
+
+      <div class="image-row">
+        <div class="image">
+          <img src="./outputs/rand_bricks.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/rand_text.png">
+        </div>
+        <div class="image">
+          <img src="./outputs/rand_white.png">
+        </div>
+      </div>
+
+      <h2>Summary</h2>
+      <p>While not able to finish these projects, I've learned a lot about image as data structures and had fun in this course! Thank you.</p>
+
+    </section>
+  </body>
+  
